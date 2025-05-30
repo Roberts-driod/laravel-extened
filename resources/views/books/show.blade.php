@@ -1,10 +1,10 @@
-<form action="/books/{{ $singleBook->id }}/destroy" method="post">
-    @csrf
+<form action="{{ route('books.destroy', $book) }}" method="post">
+    @csrf  
     @method('delete')
     <input type="submit" value="Dzēst">
 </form>
 
-<h2>{{ title }}</h2>
-<h3>{{ author }}</h3>
-<p>{{ released_at }}</p>
+<h2>{{ $book->title }}</h2>
+<h3>{{ $book->author }}</h3>
+<p>{{ $book->released_at }}</p>
 <a href="/books">All books</a>
